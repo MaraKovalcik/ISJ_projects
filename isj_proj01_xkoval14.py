@@ -5,8 +5,8 @@ import re
 def first_task(animals):
     # ukol za 3 body
     # a word that either is or is not followed by (P...)
-    word_parse = re.compile(r''' ... # it is either
-                                 ... # or it is 
+    word_parse = re.compile(r'''((?<![a-z])\w{3}(?=\s*\(P:?\s*([a-z ]*)(?=\))))|((?<![a-z])(?<!\:\ )\w+(?!\s*\()(?=\s+|$)) # it is either
+                                 #... # or it is 
                              ''', re.X)
     # return a list of triples containing either a word not followed by (P...)
     # and two empty strings, or an empty string, and a word followed by (P...)
@@ -16,8 +16,8 @@ def first_task(animals):
 
 def second_task(condensed):
     # ukol za 2 body
-    punct = re.compile(r''' ...  # after a full stop or comma
-                            ...  # ...
+    punct = re.compile(r'''((?<=[a-zA-Z],)(?=[a-zA-Z]))|((?<=[a-zA-Z]\.)(?=[a-zA-Z]))
+                            #...  # ...
                            ''', re.X)
 
     return punct.sub(' ', condensed)

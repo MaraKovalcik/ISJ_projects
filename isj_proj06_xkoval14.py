@@ -2,9 +2,10 @@
 # @Author: Marek Kovalčík (xkoval14)
 import itertools
 
+
 # vrátí první neopakující se znak ze vstupního řetězce
 def first_nonrepeating(string):
-    '''vrátí první neopakující se znak ze vstupního řetězce'''
+    """vrátí první neopakující se znak ze vstupního řetězce"""
     # do chars se ukládají postupně znaky z řetězce str
     # do repetitiveChars se ukládají znaky, které už jsou  v chars (v řetězci se opakují)
     chars = list()
@@ -37,11 +38,11 @@ def first_nonrepeating(string):
     return result
 
 
-#funkce dostane čtveřici 4 kladných celých čísel a očekávaný výsledek a vrátí setříděný seznam
-#unikátních řešení matematických hádanek s výsledkem operací +, -, *, / nad 4 čísly
+# funkce dostane čtveřici 4 kladných celých čísel a očekávaný výsledek a vrátí setříděný seznam
+# unikátních řešení matematických hádanek s výsledkem operací +, -, *, / nad 4 čísly
 def combine4(lst, expectedResult):
-    '''funkce dostane čtveřici 4 kladných celých čísel a očekávaný výsledek a vrátí
-    setříděný seznam  unikátních řešení matematických hádanek s výsledkem operací +, -, *, / nad 4 čísly'''
+    """funkce dostane čtveřici 4 kladných celých čísel a očekávaný výsledek a vrátí
+    setříděný seznam  unikátních řešení matematických hádanek s výsledkem operací +, -, *, / nad 4 čísly"""
     result = list()
     symbols = ["+", "-", "*", "/"]
     # seznam pro uložení kombinací znamének, list bude vždy obsahovat 3 prvky
@@ -113,12 +114,14 @@ def combine4(lst, expectedResult):
 
 # testovací funkce
 def test():
-    assert first_nonrepeating('\t') == None
-    assert first_nonrepeating(' ') == None
-    assert first_nonrepeating('') == None
-    print(combine4([6,6,5,2],36))
+    """testovací funkce"""
+    assert first_nonrepeating('\t') is None
+    assert first_nonrepeating(' ') is None
+    assert first_nonrepeating('') is None
+    print(combine4([6, 6, 5, 2], 36))
 
 
 # vstupní funkce programu
 if __name__ == '__main__':
+    """vstupní bod programu, vyvolání testovací funkce"""
     test()
